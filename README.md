@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artilinks - Bookmark Manager
+
+### Deployment: https://artilinks.vercel.app/
 
 
 
-## Getting Started
+### Идея проекта:
 
-First, run the development server:
+Приложение решает проблему сохранения и категоризации ссылок на полезные онлайн-сервисы.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Cтек технологий:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. `NextJS` - SSR, подгрузка данных пользователя до рендера приложения.
 
-## Learn More
+2. `JSON web tokens` - регистрация/аутентификация пользователя.
 
-To learn more about Next.js, take a look at the following resources:
+3. `Nodemailer` - подтверждение пользователем зарегистрированного email; восстановление пароля с помощью.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. `MongoDB/Mongoose` - хранение данных пользователей, взаимодействие с данными.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. `Axios` - создание API запросов.
 
-## Deploy on Vercel
+6. `Open graph data scraping` - подтягивание информации с ресурсов, на которые указывает сохраняемая пользователем ссылка.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+7. `React Transition Group` - создание анимаций при рендере компонентов.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+### Функционал приложения:
+
+1. Регистрация и авторизация пользователя в приложении.
+
+2. Восстановление пароля от аккаунта пользователя.
+
+3. Категоризация ссылок в приложении сделана с помощью структуры групп и коллекций: группа - контейнер, которых хранит в себе коллекции, коллекция - контейнер, хранящий в себе ссылки.
+
+4. `CRUD` для групп, коллекций и ссылок.
+
+5. Поиск ссылок внутри по названию ресурса внутри рассматриваемой коллекции.
+
+
+
+### Увлекательная задача в проекте и возникшие сложности:
+
+Наиболее трудоемкая и интересная часть была разработка JWT аутентификации/регистрации. Данный подход был для меня новым, поэтому мне пришлось уделить много времени на поиск информации о том, как нужно правильно писать такой функционал. В итоге я реализовал отдельный класс-сервис по работе с refresh/access-токенами. Основной проблемой было обновление access-токена в случае, когда пользователь отправил запрос на защищенный API путь, будучи аутентифицированным, но имея уже инвалидированный access-токен. Я узнал, что библиотека Axios поддерживает функционал интерсепторов, которые как раз могли решить мою проблему. При инвалидированном access-токене мой сервер возвращает ошибку авторизации 401, в интерсепторе ответа с сервера я отлавливаю данный тип ошибки, отправляю запрос на обновление токенов, а после пытаюсь повторить исходный запрос.
