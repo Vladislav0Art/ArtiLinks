@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.sidebar {
+	height: 100%;
+	background-color: $main-dark-color;
+	display: flex;
+	flex-grow: 0;
+	flex-shrink: 0;
+	position: relative;
+}
+
+
+// animations
+$sidebar-transition-time: 0.5s;
+$sidebar-transition-delay: 0.1s;
+
+
+.sidebarEnterActive {
+	width: 40px !important;
+	transition: $sidebar-transition-time;
+	transition-delay: $sidebar-transition-delay;
+}
+.sidebarEnterDone {
+	width: 40px !important;
+}
+
+.sidebarExit, 
+.sidebarExitActive {
+	transition: $sidebar-transition-time;
+}

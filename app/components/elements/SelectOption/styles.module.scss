@@ -1,0 +1,16 @@
+@import '../../../styles/colors.scss';
+
+.option {
+	box-sizing: border-box;
+	padding: 6px 15px;
+	transition: 0.1s;
+	color: $additional-text-color;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 12px;
+
+	&:hover {
+		background-color: $main-light-color;
+		color: white;
+	}
+}

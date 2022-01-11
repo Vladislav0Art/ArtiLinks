@@ -1,0 +1,107 @@
+@import '../../../styles/colors.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	min-width: 230px;
+}
+
+
+.selected {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 5px;
+	border: 1px solid $button-color;
+	box-sizing: border-box;
+	padding: 8px 10px 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+
+	span {
+		font-weight: 500;
+		font-size: 12px;
+		color: $button-color;
+	}
+
+	img {
+		width: 11px;
+		height: 11px;
+		transition: 0.2s;
+	}
+}
+
+
+.options {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	background: white;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+
+// animations
+$transition-time: 0.2s;
+$offset: -20px;
+
+
+// icon
+.iconEnter {
+	transform: rotate(0);
+}
+.iconEnterActive {
+	transform: rotate(180deg);
+	transition: transform $transition-time;
+}
+.iconEnterDone {
+	transform: rotate(180deg);
+}
+
+.iconExit {
+	transform: rotate(180deg);
+}
+.iconExitActive {
+	transform: rotate(360deg);
+	transition: transform $transition-time;
+}
+.iconExitDone {
+	transform: rotate(360deg);
+}
+
+
+// options
+.optionsEnter {
+	opacity: 0;
+	top: $offset;
+}
+.optionsEnterActive {
+	opacity: 1;
+	top: 0;
+	transition: $transition-time;
+}
+.optionsEnterDone {
+	opacity: 1;
+}
+
+
+
+.optionsExit {
+	top: 0;
+	opacity: 1;
+}
+.optionsExitActive {
+	opacity: 0;
+	top: $offset;
+	transition: $transition-time;
+}
+.optionsExitDone {
+	opacity: 0;
+	top: 0;
+}

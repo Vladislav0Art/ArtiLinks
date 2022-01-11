@@ -1,0 +1,206 @@
+@import '../../../styles/colors.scss';
+
+.bookmark {
+	display: flex;
+	box-sizing: border-box;
+
+	.content {
+		display: flex;
+		flex-shrink: 1;
+
+		.imgContainer {
+			overflow: hidden;
+			flex-shrink: 0;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.text {
+		display: flex;
+		font-family: 'Raleway';
+
+		h4 {
+			font-weight: 600;
+
+			a {
+				color: $text-color;
+				text-decoration: none;
+				transition: 0.2s;
+
+				&:hover {
+					color: $hover-color;
+				}
+			}
+		}
+		p {
+			color: $additional-text-color;
+		}
+
+		.subtext {
+			display: flex;
+			gap: 20px;
+
+			.domain {
+				font-family: 'Montserrat';
+				font-weight: 500;
+				font-size: 12px;
+				
+				a {
+					color: $hover-color;
+					text-decoration: none;
+					transition: 0.2s;
+				}
+			}
+			.date {
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 300;
+				font-size: 12px;
+				color: $additional-text-color;		
+			}
+		}
+	}
+}
+
+// views
+.listView {
+	padding: 15px 30px 15px 15px;
+	justify-content: space-between;
+	gap: 15px;
+	border-bottom: 1px solid $line-color;
+
+	.content {
+		.imgContainer {
+			border-radius: 12px;
+			max-width: 145px;
+			max-height: 90px;
+			width: 100%;
+		}
+	}
+
+	.text {
+		flex-direction: column;
+		gap: 20px;
+		margin-left: 15px;
+
+		h4 {
+			font-size: 16px;
+		}
+
+		p {
+			margin-top: 10px;
+			font-size: 12px;
+		}
+	}
+
+	.toolbar {
+		align-self: center;
+		gap: 15px;
+	}
+}
+.cardView {
+	max-width: 300px;
+	width: 100%;
+	flex-direction: column;
+	border-radius: 14px;
+	overflow: hidden;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+	box-sizing: border-box;
+	padding-bottom: 20px;
+
+	.content {
+		flex-direction: column;
+
+		.imgContainer {
+			height: 160px;
+		}
+	}
+
+	.text {
+		flex-direction: column;
+		box-sizing: border-box;
+		padding: 15px 12px 0 12px;
+
+		h4 {
+			font-size: 14px;
+		}
+
+		p {
+			font-size: 12px;
+			line-height: 160%;
+			margin-top: 8px;
+		}
+
+		.subtext {
+			margin-top: 12px;
+		}
+	}
+
+	.toolbar {
+		align-self: center;
+		gap: 10px;
+		margin-top: 33px;
+	}
+}
+
+.headlineView {
+	padding: 17px 30px 17px 15px;
+	justify-content: space-between;
+	gap: 15px;
+	border-bottom: 1px solid $line-color;
+	flex-wrap: wrap;
+
+	.content {
+		gap: 15px;
+
+		.imgContainer {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	.text {
+		flex-direction: column;
+		gap: 12px;
+
+		h4 {
+			font-size: 16px;
+		}
+
+		p {
+			display: none;
+		}
+	}
+
+	.toolbar {
+		gap: 15px;
+		align-self: center;
+	}
+}
+
+// toolbar
+.toolbar {
+	display: flex;
+}
+
+.toolbarIcon {
+	cursor: pointer;
+	path, rect {
+		transition: 0.15s;
+	}
+
+	&:hover {
+		path {
+			fill: $hover-color;
+		}
+		rect {
+			stroke: $hover-color;
+		}
+	}
+}

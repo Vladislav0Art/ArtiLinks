@@ -1,0 +1,12 @@
+.container {
+	width: 430px;
+	box-sizing: border-box;
+	padding: 0 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.input {
+	max-width: none;
+}

@@ -1,0 +1,118 @@
+$default: transparent;
+$filled: rgba(0, 0, 0, 0.7);
+
+.wrapper {
+	position: fixed;
+	z-index: 20;
+	padding: 15px;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+// entering animation of modal
+.wrapperEnter {
+	background-color: $default;
+
+	.content {
+		opacity: 0;
+	}
+}
+
+.wrapperEnterActive {
+	animation: fadeIn .2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+	.content {
+		animation: scaleUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+	}
+}
+
+.wrapperEnterDone {
+	background-color: $filled;
+
+	.content {
+		opacity: 1;
+	}
+}
+
+
+// leaving animation of modal
+.wrapperExit {
+	background-color: $filled;
+
+	.content {
+		opacity: 1;
+	}
+}
+
+.wrapperExitActive {
+	animation: fadeOut 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+	.content {
+		animation: scaleDown 0.3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+	}
+}
+
+.wrapperExitDone {
+	background-color: $default;
+
+	.content {
+		opacity: 0;
+	}
+}
+
+
+// animations for modal:
+
+// fading in background
+@keyframes fadeIn {
+	0% {
+		background-color: $default;
+	}
+	100% {
+		background-color: $filled;
+	}
+}
+
+
+// scaling up modal
+@keyframes scaleUp {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+
+// fading out background
+@keyframes fadeOut {
+	0% {
+		background: $filled;
+	}
+	100% {
+		background: $default;
+	}
+}
+
+
+// scaling down modal
+@keyframes scaleDown {
+	0% {
+	  transform: translateY(0px);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateY(100px);
+	  opacity: 0;
+	}
+}

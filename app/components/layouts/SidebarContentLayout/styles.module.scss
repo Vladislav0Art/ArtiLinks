@@ -1,0 +1,77 @@
+@import '../../../styles/colors.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	position: inherit;
+	margin-top: 60px;
+	overflow: auto;
+
+	&::-webkit-scrollbar {
+		width: 2px;
+		border-radius: 10px;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  background-color: $button-color;
+	}
+	
+}
+
+.topPart {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	box-sizing: border-box;
+	padding: 0 30px;
+}
+
+.groupButton {
+	margin-top: 40px;
+	width: 260px;
+	display: grid;
+	grid-template-columns: auto;
+	align-self: center;
+}
+
+.groupList {
+	box-sizing: border-box;
+	margin-top: 70px;
+	padding-bottom: 30px;
+}
+
+
+// animation
+$content-transition-time: 0.3s;
+$content-transition-delay: 0.3s;
+
+.contentEnter {
+	opacity: 1;
+	left: 0;
+}
+.contentEnterActive {
+	opacity: 0;
+	left: -50px;
+	transition: $content-transition-time;
+}
+.contentEnterDone {
+	opacity: 0;
+	left: -50px;
+}
+
+.contentExit {
+	opacity: 0;
+	left: -50px;
+}
+.contentExitActive {
+	opacity: 1;
+	left: 0;
+	transition: $content-transition-time;
+	transition-delay: $content-transition-delay;
+}
+.contentExitDone {
+	opacity: 1;
+	left: 0;
+}

@@ -1,0 +1,43 @@
+@import '../../../styles/colors.scss';
+
+.container {
+	box-sizing: border-box;
+	padding: 17px 15px 10px 15px;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	display: inline-block;
+	min-width: 270px;
+	max-width: 340px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	.title {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	
+		h4 {
+			font-weight: 600;
+			font-size: 15px;
+			line-height: 150%;
+		}
+	}
+
+	p {
+		font-size: 13px;
+		line-height: 170%;
+		color: $additional-text-color;
+	}
+}
+
+.buttons {
+	display: flex;
+	gap: 6px;
+	justify-content: flex-end;
+	margin-top: 10px;
+}

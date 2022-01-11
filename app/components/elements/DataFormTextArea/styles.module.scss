@@ -1,0 +1,42 @@
+@import '../../../styles/colors.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	span {
+		font-weight: 600;
+		font-size: 14px;
+	}
+}
+
+.textareaContainer {
+	display: flex;
+	min-width: 230px;
+}
+
+.textarea {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px;
+	outline: none;
+	resize: none;
+	overflow: auto;
+	height: 140px;
+	border: 1px solid $line-color;
+	border-radius: 10px;
+	font-size: 14px;
+	font-family: 'Raleway';
+	line-height: 150%;
+
+	&::-webkit-scrollbar {
+		width: 3px;
+		border-radius: 10px;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  background-color: $line-color;
+	}
+}

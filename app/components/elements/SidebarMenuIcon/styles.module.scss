@@ -1,0 +1,114 @@
+.menuIcon {
+	position: absolute;
+	z-index: 10;
+	top: 15px;
+	right: 15px;
+	width: 18px;
+	height: 18px;
+	background-image: url('../../../../public/svg/cross.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	cursor: pointer;
+}
+
+
+// animation
+$menu-icon-transition-time: 0.8s; // matches timeout of component
+
+.menuIconEnter {
+	opacity: 1;
+}
+.menuIconEnterActive {
+	animation: changeMenuIconToMenu $menu-icon-transition-time forwards;
+}
+.menuIconEnterDone {
+	width: 25px;
+	height: 20px;
+	right: 50%;
+	transform: translateX(50%);
+	background-image: url('../../../../public/svg/menu.svg');
+	opacity: 1;
+}
+
+.menuIconExit {
+	width: 25px;
+	height: 20px;
+	right: 50%;
+	transform: translateX(50%);
+	background-image: url('../../../../public/svg/menu.svg');
+	opacity: 1;
+}
+.menuIconExitActive {
+	animation: changeMenuIconToCross $menu-icon-transition-time forwards;
+}
+.menuIconExitDone {
+	opacity: 1;
+	top: 15px;
+	height: 18px;
+	width: 18px;
+	right: 15px;
+	background-image: url('../../../../public/svg/cross.svg');
+}
+
+
+
+
+@keyframes changeMenuIconToMenu {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+		width: 18px;
+		height: 18px;
+		right: 65px;
+		top: 15px;
+		background-image: url('../../../../public/svg/cross.svg');
+	}
+	51% {
+		opacity: 0;
+		width: 25px;
+		height: 20px;
+		background-image: url('../../../../public/svg/menu.svg');
+	}
+	100% {
+		opacity: 1;
+		width: 25px;
+		height: 20px;
+		right: 50%;
+		transform: translateX(50%);
+		background-image: url('../../../../public/svg/menu.svg');
+	}
+}
+
+
+@keyframes changeMenuIconToCross {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+		width: 25px;
+		height: 20px;
+		background-image: url('../../../../public/svg/menu.svg');
+	}
+	51% {
+		opacity: 0;
+		width: 18px;
+		height: 18px;
+		top: 15px;
+		right: 15px;
+		transform: translateX(0);
+		background-image: url('../../../../public/svg/cross.svg');
+	}
+	100% {
+		opacity: 1;
+		width: 18px;
+		height: 18px;
+		top: 15px;
+		right: 15px;
+		transform: translateX(0);
+		background-image: url('../../../../public/svg/cross.svg');
+	}
+}

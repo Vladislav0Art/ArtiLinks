@@ -1,0 +1,55 @@
+@import '../../../styles/colors.scss';
+
+.panel {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 0 40px 20px 40px;
+	gap: 10px;
+}
+
+.align {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.inputContainer {
+	max-width: 310px;
+	width: 100%;
+}
+
+.collection {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	img {
+		width: 35px;
+		height: 35px;
+	}
+
+	h5 {
+		color: $text-color;
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
+
+.options {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	span {
+		font-weight: 600;
+		font-size: 14px;
+		color: $additional-text-color;
+		cursor: pointer;
+		transition: 0.1s;
+
+		&:hover {
+			color: $hover-color;
+		}
+	}
+}

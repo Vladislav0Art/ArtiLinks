@@ -1,0 +1,36 @@
+@import '../../../styles/colors.scss';
+
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	span {
+		font-size: 14px;
+		color: $additional-text-color;
+	}
+}
+
+.icons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+
+	img {
+		width: 28px;
+		height: 28px;
+		cursor: pointer;
+		border: 2px solid transparent;
+		border-radius: 8px;
+		transition: 0.05s;
+
+		&:hover {
+			border-color: $main-light-color;
+		}
+	}
+}
+
+.selected {
+	border-color: $main-dark-color !important;
+}

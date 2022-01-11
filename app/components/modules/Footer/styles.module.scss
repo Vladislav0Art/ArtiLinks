@@ -1,0 +1,40 @@
+@import '../../../styles/colors.scss';
+
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid $line-color;
+  padding: 25px 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.links {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 40px;
+}
+
+.copyright {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 14px;
+  color: $text-color;
+}
+
+
+@media all and (max-width: 576px) {
+  .content {
+    flex-direction: column;
+    justify-content: center
+  }
+
+  .links {
+    margin-bottom: 20px;
+    grid-gap: 25px; 
+  }
+}

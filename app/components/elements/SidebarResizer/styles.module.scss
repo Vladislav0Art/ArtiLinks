@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.resizer {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 7px;
+	justify-self: flex-end;
+	cursor: w-resize;
+	resize: horizontal;
+	transition: 0.1s;
+	position: relative;
+
+	img {
+		position: absolute;
+		transition: inherit;
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 22px;
+	}
+}
+
+.resizing {
+	background-color: $hover-color;	
+
+	img {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,23 @@
+@import '../../../styles/colors.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border-top: 1px solid $line-color;
+	box-sizing: border-box;
+	padding-top: 15px;
+}
+
+.label {
+	font-family: 'Montserrat';
+	font-weight: 600;
+	font-size: 16px;
+	color: $line-color;
+}
+
+.collections {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

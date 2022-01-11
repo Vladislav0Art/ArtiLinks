@@ -1,0 +1,13 @@
+@import '../../../styles/colors.scss';
+
+.link {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 14px;
+  color: $text-color;
+  transition: 0.15s;
+
+  &:hover {
+    color: $hover-color;
+  }
+}

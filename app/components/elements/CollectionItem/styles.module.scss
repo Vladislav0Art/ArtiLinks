@@ -1,0 +1,61 @@
+@import '../../../styles/colors.scss';
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	box-sizing: border-box;
+	padding: 8px 15px;
+	cursor: pointer;
+	color: white;
+	font-size: 14px;
+	transition: 0.1s;
+	border-radius: 10px;
+	border: 1px solid transparent;
+
+	&:hover .dots {
+		opacity: 0.6;
+	}
+
+	&:hover {
+		border-color: white;
+	}
+}
+
+.selected {
+	border-color: white;
+}
+
+
+.main {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+
+.dots {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.1s;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 1 !important;
+	}
+
+	img {			
+		width: 20px;
+	}
+}
+
+
+.bookmarksCount {
+	font-weight: 300;
+	color: $line-color;
+}

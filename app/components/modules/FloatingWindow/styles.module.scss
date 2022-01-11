@@ -1,0 +1,47 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	box-sizing: border-box;
+	padding: 20px 15px;
+	background: white;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 8px;
+}
+
+
+// animation
+$transition-time: 0.25s;
+$top-offset: -15px;
+
+.floatingWindowEnter {
+	opacity: 0;
+	top: $top-offset;
+	z-index: 10;
+	position: relative;
+}
+.floatingWindowEnterActive {
+	transition: $transition-time ease-in-out;
+	opacity: 1;
+	top: 0;
+}
+.floatingWindowEnterDone {
+	opacity: 1;
+}
+
+.floatingWindowExit {
+	opacity: 1;
+	top: 0;
+	z-index: 10;
+	position: relative;
+}
+.floatingWindowExitActive {
+	transition: $transition-time ease-in-out;
+	opacity: 0;
+	top: $top-offset;
+}
+.floatingWindowExitDone {
+	position: relative;
+	opacity: 0;
+	top: $top-offset;
+}

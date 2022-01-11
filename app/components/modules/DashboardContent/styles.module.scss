@@ -1,0 +1,25 @@
+@import '../../../styles/colors.scss';
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding-top: 15px;
+}
+
+.content {
+	border-top: 1px solid $line-color;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+		border-radius: 10px;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  background-color: $additional-text-color;
+	}
+}

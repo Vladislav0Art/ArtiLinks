@@ -1,0 +1,21 @@
+@import '../../../styles/colors.scss';
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	span {
+		font-weight: 600;
+		font-size: 14px;
+	}
+}
+
+.inputContainer {
+	display: flex;
+	min-width: 230px;
+}
+
+.input {
+	font-size: 14px !important;
+}

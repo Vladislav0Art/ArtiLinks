@@ -1,0 +1,27 @@
+@import '../../../styles/colors.scss';
+
+.title {
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.top {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+
+	.search {
+		max-width: none;
+		font-size: 14px;
+	}
+}
+
+.groups {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-height: 280px;
+	height: 100%;
+}

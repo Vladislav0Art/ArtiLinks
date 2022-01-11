@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid $line-color;
+  padding: 20px 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 40px;
+}
+
+@media all and (max-width: 576px) {
+  .links {
+    grid-gap: 25px;
+  }
+}

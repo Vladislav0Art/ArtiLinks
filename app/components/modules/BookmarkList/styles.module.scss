@@ -1,0 +1,16 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wrapperList,
+.wrapperHeadline {
+	flex-direction: column;
+}
+
+
+.wrapperCard {
+	gap: 30px;
+	box-sizing: border-box;
+	padding: 20px;
+}

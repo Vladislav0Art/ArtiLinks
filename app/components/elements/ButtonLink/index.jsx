@@ -1,0 +1,68 @@
+import React from 'react';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
+// utils/routes
+import { HOME_PAGE } from '../../../utils/routes/pages';
+
+
+const ButtonLink = ({
+  href, // default: HOME_PAGE
+  as,
+  passHref, // default: true
+  replace,
+  scroll,
+  shallow,
+  locale,
+  children
+}) => {
+  return (
+    <Link 
+      href={href}
+      as={as}
+      passHref={passHref}
+      replace={replace}
+      scroll={scroll}
+      shallow={shallow}
+      locale={locale}
+    >
+      <a className="button button-medium">
+        { children }
+      </a>
+    </Link>
+  );
+};
+
+
+// default props
+ButtonLink.defaultProps = {
+	href: HOME_PAGE,
+	passHref: true,
+	replace: false,
+	scroll: false,
+	shallow: false,
+	locale: false,
+};
+
+// prop types
+const nullableString = PropTypes.oneOfType([
+	PropTypes.string,
+	PropTypes.oneOf([null])
+]);
+
+const requiredBool = PropTypes.bool.isRequired;
+
+ButtonLink.propTypes = {
+	href: PropTypes.string.isRequired,
+	as: nullableString,
+	passHref: requiredBool,
+	replace: requiredBool,
+	scroll: requiredBool,
+	shallow: requiredBool,
+	locale: requiredBool,
+	children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]).isRequired
+};
+
+export default ButtonLink;

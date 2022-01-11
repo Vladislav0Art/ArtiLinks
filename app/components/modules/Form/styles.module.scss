@@ -1,0 +1,44 @@
+@import '../../../styles/colors.scss';
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  input {
+    margin-top: 50px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    margin-top: 16px;
+    color: $main-dark-color;
+    transition: 0.2s;
+    border-bottom: 1px solid $main-dark-color;
+    align-self: start;
+    outline: none;
+    
+    &:first-of-type {
+      margin-top: 30px;
+    }
+
+    &:hover, &:focus {
+      color: $hover-color;
+      border-bottom-color: $hover-color; 
+    }
+  }
+
+  button {
+    margin-top: 65px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .content {
+    width: 290px;
+  }
+}

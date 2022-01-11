@@ -1,0 +1,39 @@
+@import '../../../styles/colors.scss'; 
+
+.form {
+	background: white;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 20px 15px 10px 15px;
+	height: 100%;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	max-height: 420px;
+	overflow: auto;
+	gap: 30px;
+
+	&::-webkit-scrollbar {
+		width: 3px;
+		border-radius: 10px;
+	}
+	
+	&::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  background-color: $line-color;
+	}
+}
+
+
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 15px;
+	gap: 6px;
+
+}
