@@ -1,4 +1,4 @@
-# Artilinks - Bookmark Manager
+# ArtiLinks - Bookmark Manager
 
 ### Deployment: https://artilinks.vercel.app/
 
