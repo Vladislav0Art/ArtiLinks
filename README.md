@@ -1,4 +1,4 @@
-<img src="./assets/img/readme-header.png" alt="ArtiLinks logo" />
+<img src="./assets/img/readme-header.png" alt="ArtiLinks Logo" />
 
 
 # **ArtiLinks** - Bookmark Manager
